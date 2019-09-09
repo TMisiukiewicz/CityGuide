@@ -1,21 +1,26 @@
-import { nearbyActions, userActions } from './actions';
+import { Dispatch } from 'redux';
+import {
+    nearbyActions,
+    userActions
+} from './actions';
 import {
     SingleObject,
-    GeolocationCoords
+    GeolocationCoords,
+    DefaultReducerAction
 } from 'types';
 
 export const mapStateToProps = (state: any): any => {
     return state;
 };
 
-export const mapDispatchToProps = (dispatch: any) => {
+export const mapDispatchToProps = (dispatch: Dispatch<any>): any => {
     return {
         dispatchers: {
             nearby: {
-                setNearbyObjects: (objects: SingleObject[]) => dispatch(nearbyActions.setNearbyObjects(objects))
+                setNearbyObjects: (objects: SingleObject[]): DefaultReducerAction => dispatch(nearbyActions.setNearbyObjects(objects))
             },
             user: {
-                setUserLocation: (location: GeolocationCoords) => dispatch(userActions.setUserLocation(location))
+                setUserLocation: (location: GeolocationCoords): DefaultReducerAction => dispatch(userActions.setUserLocation(location))
             }
         }
     }

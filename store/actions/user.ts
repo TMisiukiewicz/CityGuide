@@ -9,3 +9,9 @@ export function setUserLocation(location: GeolocationCoords): DefaultReducerActi
         location
     }
 };
+
+export function geolocationDenied(): DefaultReducerAction {
+    return {
+        type: 'USER_DENIED_LOCATION'
+    };
+}

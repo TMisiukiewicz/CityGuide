@@ -22,4 +22,17 @@ export interface GeolocationCoords {
 
 export interface UserReducerState {
     location: GeolocationCoords;
+    locationDenied: boolean;
+}
+
+export interface StoreInterface {
+    nearby: NearbyReducerState;
+    user: UserReducerState;
+    dispatchers: any;
+}
+
+export interface NearbyProps {
+    userLocation: GeolocationCoords;
+    userDeniedLocation: boolean;
+    nearbyObjects: SingleObject[];
 }

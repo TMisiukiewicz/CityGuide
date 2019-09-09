@@ -4,7 +4,7 @@ const initialState: NearbyReducerState = {
     objects: [],
 }
 
-const nearby = (state = initialState, action: DefaultReducerAction) => {
+const nearby = (state = initialState, action: DefaultReducerAction): object => {
     switch (action.type) {
         case 'SET_NEARBY_OBJECTS':
             return {
