@@ -6,6 +6,7 @@ import {
 import Geolocation, { GeoCoordinates, GeoPosition, GeoError } from 'react-native-geolocation-service';
 import { store } from 'store';
 import { setUserLocation, geolocationDenied } from 'store/actions/user';
+import { GeolocationCoords } from 'types';
 
 export default class GeolocationService {
 

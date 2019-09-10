@@ -3,7 +3,9 @@ export interface SingleObject {
     name: string;
     distance: number;
     description: string;
-    photos?: [];
+    photos?: string[];
+    mainImage: string;
+    coords: GeolocationCoords;
 };
 
 export interface NearbyReducerState {
@@ -35,4 +37,10 @@ export interface NearbyProps {
     userLocation: GeolocationCoords;
     userDeniedLocation: boolean;
     nearbyObjects: SingleObject[];
+    dispatchers?: any;
+}
+
+export interface ObjectCardProps {
+    object: SingleObject;
+    dispatchers?: any;
 }
