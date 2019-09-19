@@ -1,3 +1,5 @@
+import { NavigationScreenProps, NavigationScreenProp } from "react-navigation";
+
 export interface SingleObject {
     id: number;
     name: string;
@@ -43,4 +45,10 @@ export interface NearbyProps {
 export interface ObjectCardProps {
     object: SingleObject;
     dispatchers?: any;
+    navigation?: any;
+}
+
+export interface SingleObjectProps {
+    object: SingleObject;
+    navigation: any;
 }

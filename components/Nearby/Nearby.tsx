@@ -12,7 +12,7 @@ import { GeolocationService } from 'services';
 
 const Geolocation = new GeolocationService();
 
-function Nearby(props: NearbyProps): JSX.Element {
+export function Nearby(props: NearbyProps): JSX.Element {
     const { userDeniedLocation, dispatchers, nearbyObjects } = props;
 
     useEffect(() => {
@@ -31,6 +31,7 @@ function Nearby(props: NearbyProps): JSX.Element {
                 long: 53.1306049
             }
         }];
+        
         if (nearbyObjects.length > 0) {
             dispatchers.nearby.setNearbyObjects(nearbyObjects);
         }
@@ -38,7 +39,7 @@ function Nearby(props: NearbyProps): JSX.Element {
 
     return (
         <View>
-            <Heading title={dictionary.nearbyArea()} /> 
+            {/* <Heading title={dictionary.nearbyArea()} />  */}
             {userDeniedLocation && <Text>{dictionary.geolocationDenied()}</Text>}
             {
                 nearbyObjects.length > 0 &&
