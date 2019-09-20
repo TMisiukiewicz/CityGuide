@@ -8,6 +8,8 @@ import Nearby from './Nearby/Nearby';
 import ObjectCard from './Objects/ObjectCard';
 import SingleObject from './Objects/SingleObject';
 import DistanceTo from './Objects/DistanceTo';
+import ObjectBar from './Objects/ObjectBar';
+import ObjectTabBar from './Objects/ObjectTabBar';
 
 export {
     Heading,
@@ -16,5 +18,7 @@ export {
     ObjectCard,
     SingleObject,
     DistanceTo,
-    BottomMenu
+    BottomMenu,
+    ObjectBar,
+    ObjectTabBar
 };

@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { View } from 'react-native';
 import {
     Layout,
     Text
 } from 'react-native-ui-kitten';
-import { ObjectCard } from 'components';
+import {
+    ObjectCard,
+    ObjectTabBar
+} from 'components';
 import dictionary from 'dictionary';
 import {
     StoreInterface,
@@ -50,17 +54,19 @@ Cras malesuada pellentesque dapibus.Nulla sit amet sodales ligula.Proin venenati
     }, []);
 
     return (
-        <Layout style={styles.container}>
-            {/* <Heading title={dictionary.nearbyArea()} />  */}
-            {userDeniedLocation && <Text>{dictionary.geolocationDenied()}</Text>}
-            {
-                nearbyObjects.length > 0 &&
-                nearbyObjects.map((object) => <ObjectCard key={object.id} object={object} />)
-            }
-            {
-                nearbyObjects.length === 0 && <Text>Brak obiektów w pobliżu :(</Text>
-            }
-        </Layout>
+        <React.Fragment>
+            <ObjectTabBar />
+            <Layout style={styles.container}>
+                {userDeniedLocation && <Text>{dictionary.geolocationDenied()}</Text>}
+                {
+                    nearbyObjects.length > 0 &&
+                    nearbyObjects.map((object) => <ObjectCard key={object.id} object={object} />)
+                }
+                {
+                    nearbyObjects.length === 0 && <Text>Brak obiektów w pobliżu :(</Text>
+                }
+            </Layout>
+        </React.Fragment>
     );
 }
 

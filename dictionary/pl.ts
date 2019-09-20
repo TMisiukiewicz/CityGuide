@@ -1,5 +1,6 @@
 const pl = {
     nearbyArea: (): string => 'W pobliżu',
+    all: (): string => 'Wszystkie',
     explore: (): string => 'Odkrywaj',
     geolocationDenied: (): string => 'Nie wyraziłeś zgody na odczyt Twojej lokalizacji :(',
     noNearbyObjects: (): string => 'Brak obiektów w pobliżu',

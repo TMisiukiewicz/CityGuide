@@ -63,3 +63,7 @@ export interface GeneralReducerState {
 export interface HeadingProps {
     headerTitle?: string;
 }
+
+export interface ObjectBarProps {
+    distance: number;
+}
