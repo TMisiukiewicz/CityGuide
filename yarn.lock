@@ -592,17 +592,17 @@
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.4.tgz#a87b4b04e5ae14a88d48ebef15015f6b7d1f5677"
 
-"@eva-design/dss@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@eva-design/dss/-/dss-1.0.1.tgz#7775c18166bce9d9528919af1430ecfa617acbd6"
+"@eva-design/dss@^1.1.0-beta.1":
+  version "1.1.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@eva-design/dss/-/dss-1.1.0-beta.1.tgz#fbf706668ce12da92567a3a29c84a1a8fe9d84a7"
 
 "@eva-design/eva@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@eva-design/eva/-/eva-1.0.1.tgz#6cf62086481d6506c58f3f33d8b1462f4f337e6e"
 
-"@eva-design/processor@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@eva-design/processor/-/processor-1.0.1.tgz#5c39c8f65c20b3002561807adfd028d0af8864fb"
+"@eva-design/processor@^1.1.0-beta.1":
+  version "1.1.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@eva-design/processor/-/processor-1.1.0-beta.1.tgz#bb054b39f3c42370518761f68c122767efcb9374"
 
 "@hapi/address@2.x.x":
   version "2.1.1"
@@ -1082,6 +1082,12 @@
     is-glob "^4.0.1"
     lodash.unescape "4.0.1"
     semver "^6.2.0"
+
+"@ui-kitten/eva-icons@^4.2.0-beta.1":
+  version "4.2.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@ui-kitten/eva-icons/-/eva-icons-4.2.0-beta.1.tgz#1cd75564fc173f941dd0d8190c6b4cfb7747891f"
+  dependencies:
+    react-native-eva-icons "1.1.0"
 
 abab@^2.0.0:
   version "2.0.1"
@@ -5061,7 +5067,7 @@ prop-types-exact@^1.2.0:
     object.assign "^4.1.0"
     reflect.ownkeys "^0.2.0"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -5175,6 +5181,10 @@ react-native-elements@^1.2.0:
     react-native-ratings "^6.3.0"
     react-native-status-bar-height "^2.2.0"
 
+react-native-eva-icons@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-eva-icons/-/react-native-eva-icons-1.1.0.tgz#323e55d759187edc216d049e7c0012a27383e0ed"
+
 react-native-geolocation-service@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/react-native-geolocation-service/-/react-native-geolocation-service-3.1.0.tgz#62e112374f1cd284ea00ced0ef6826af820f50e2"
@@ -5193,6 +5203,12 @@ react-native-gesture-handler@^1.4.1:
 react-native-hooks@^0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/react-native-hooks/-/react-native-hooks-0.9.0.tgz#589fc2390296d9afe03327298dabcf0a1f350910"
+
+react-native-material-bottom-navigation@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-material-bottom-navigation/-/react-native-material-bottom-navigation-1.0.4.tgz#c9c9bf4a2f8d260a50703a39e01f600cc6cf66d6"
+  dependencies:
+    prop-types "^15.6.1"
 
 react-native-ratings@^6.3.0:
   version "6.4.0"
@@ -5221,12 +5237,16 @@ react-native-status-bar-height@^2.2.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.4.0.tgz#de8cee4bb733a196167210d2d0bc1fa10acba3e3"
 
-react-native-ui-kitten@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/react-native-ui-kitten/-/react-native-ui-kitten-4.1.1.tgz#a0aedacfc0d6b7a99b03ce8ca9cf80ddca286a74"
+react-native-svg@^9.9.4:
+  version "9.9.4"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-9.9.4.tgz#31070eeb68fb6e8dc0c0828c87687da3e0679102"
+
+react-native-ui-kitten@^4.2.0-beta.2:
+  version "4.2.0-beta.2"
+  resolved "https://registry.yarnpkg.com/react-native-ui-kitten/-/react-native-ui-kitten-4.2.0-beta.2.tgz#1e6ef85007d9c6b6edac85066a0c47861d88e6ba"
   dependencies:
-    "@eva-design/dss" "^1.0.1"
-    "@eva-design/processor" "^1.0.1"
+    "@eva-design/dss" "^1.1.0-beta.1"
+    "@eva-design/processor" "^1.1.0-beta.1"
     hoist-non-react-statics "^3.2.1"
     lodash.merge "^4.6.1"
 

@@ -1,5 +1,3 @@
-import { NavigationScreenProps, NavigationScreenProp } from "react-navigation";
-
 export interface SingleObject {
     id: number;
     name: string;
@@ -32,6 +30,7 @@ export interface UserReducerState {
 export interface StoreInterface {
     nearby: NearbyReducerState;
     user: UserReducerState;
+    general: GeneralReducerState;
     dispatchers: any;
 }
 
@@ -51,4 +50,16 @@ export interface ObjectCardProps {
 export interface SingleObjectProps {
     object: SingleObject;
     navigation: any;
+}
+
+export interface DistanceToProps {
+    distance: number;
+}
+
+export interface GeneralReducerState {
+    headerTitle: string;
+}
+
+export interface HeadingProps {
+    headerTitle?: string;
 }
