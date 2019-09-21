@@ -1,27 +1,44 @@
 import React from 'react';
 import {
-    StyleSheet
+    StyleSheet,
+    View
 } from 'react-native';
 import {
-    Layout,
+    Button,
     Icon,
-    Text,
+    StyleType,
 } from 'react-native-ui-kitten';
 import { DistanceToProps } from 'types';
 
 export default function DistanceTo(props: DistanceToProps): JSX.Element {
     const { distance } = props;
 
+    const renderIcon = (style: StyleType): JSX.Element => {
+        return (
+            <Icon name='pin-outline' {...style} />
+        )
+    };
+
     return (
-        <Layout>
-            <Icon name='pin-outline' style={style.content} />
-            <Text style={style.content}>{`${distance} km`}</Text>
-        </Layout>
+        <Button
+            icon={() => renderIcon(iconStyle)}
+            disabled
+            appearance="ghost"
+            textStyle={style.content}
+        >
+            {`${distance} km`}
+        </Button>
     )
 }
 
 const style = StyleSheet.create({
     content: {
-        color: '#c9d6df'
+        color: '#c9d6df',
     }
 });
+
+const iconStyle = {
+    width: 26,
+    height: 26,
+    fill: '#c9d6df'
+}

@@ -10,6 +10,7 @@ import SingleObject from './Objects/SingleObject';
 import DistanceTo from './Objects/DistanceTo';
 import ObjectBar from './Objects/ObjectBar';
 import ObjectTabBar from './Objects/ObjectTabBar';
+import FavoriteIcon from './Objects/FavoriteIcon';
 
 export {
     Heading,
@@ -20,5 +21,6 @@ export {
     DistanceTo,
     BottomMenu,
     ObjectBar,
-    ObjectTabBar
+    ObjectTabBar,
+    FavoriteIcon
 };

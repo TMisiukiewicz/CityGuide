@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     TabBar,
     Tab
@@ -7,8 +7,17 @@ import { StyleSheet } from 'react-native';
 import dictionary from 'dictionary';
 
 export default function ObjectTabBar(): JSX.Element {
+    const [tabIndex, setTabIndex] = useState(0);
+    const changeList = (newIndex: number): void => {
+        setTabIndex(newIndex);
+    };
+
     return (
-        <TabBar style={style.bar}>
+        <TabBar
+            style={style.bar}
+            selectedIndex={tabIndex}
+            onSelect={changeList}
+        >
             <Tab title={dictionary.nearbyArea()} />
             <Tab title={dictionary.all()} />
         </TabBar>
