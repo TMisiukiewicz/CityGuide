@@ -1,5 +1,6 @@
 import Heading from './Shared/Heading';
 import BottomMenu from './Shared/BottomMenu';
+import BottomMenuContainer from './Shared/BottomMenuContainer';
 
 import Slider from './Intro/Slider';
 
@@ -11,6 +12,7 @@ import DistanceTo from './Objects/DistanceTo';
 import ObjectBar from './Objects/ObjectBar';
 import ObjectTabBar from './Objects/ObjectTabBar';
 import FavoriteIcon from './Objects/FavoriteIcon';
+import ObjectBottomBar from './Objects/ObjectBottomBar';
 
 export {
     Heading,
@@ -22,5 +24,7 @@ export {
     BottomMenu,
     ObjectBar,
     ObjectTabBar,
-    FavoriteIcon
+    FavoriteIcon,
+    BottomMenuContainer,
+    ObjectBottomBar
 };

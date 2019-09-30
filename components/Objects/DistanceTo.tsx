@@ -8,11 +8,16 @@ import {
     Icon,
     StyleType,
 } from 'react-native-ui-kitten';
-import { DistanceToProps } from 'types';
+import { connect } from 'react-redux';
+import { mapDispatchToProps } from 'store';
+import { GeolocationService } from 'services';
+import { DistanceToProps, StoreInterface, DistanceToMapToProps } from 'types';
 
-export default function DistanceTo(props: DistanceToProps): JSX.Element {
-    const { distance } = props;
+const Geolocation = new GeolocationService();
 
+function DistanceTo(props: DistanceToProps): JSX.Element {
+    const { userLocation, objectCoords } = props;
+    const distance = Geolocation.calculateDistance(userLocation, objectCoords);
     const renderIcon = (style: StyleType): JSX.Element => {
         return (
             <Icon name='pin-outline' {...style} />
@@ -26,7 +31,7 @@ export default function DistanceTo(props: DistanceToProps): JSX.Element {
             appearance="ghost"
             textStyle={style.content}
         >
-            {`${distance} km`}
+            {`${distance.toFixed(2)} km`}
         </Button>
     )
 }
@@ -42,3 +47,13 @@ const iconStyle = {
     height: 26,
     fill: '#c9d6df'
 }
+
+const mapStateToProps = (state: StoreInterface): DistanceToMapToProps => {
+    const { user } = state;
+
+    return {
+        userLocation: user.location,
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(DistanceTo);

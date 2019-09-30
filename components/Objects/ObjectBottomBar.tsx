@@ -11,11 +11,11 @@ export default function BottomMenu(): JSX.Element {
 
     const tabs = [
         {
-            title: dictionary.explore(),
-            icon: 'globe-outline'
+            title: dictionary.information(),
+            icon: 'info-outline'
         },
         {
-            title: dictionary.map(),
+            title: dictionary.seeOnMap(),
             icon: 'pin-outline'
         },
         {
@@ -23,7 +23,7 @@ export default function BottomMenu(): JSX.Element {
             icon: 'heart-outline'
         },
     ]
-    
+
     const onTabSelect = (newTabIndex: number): void => {
         setTabIndex(newTabIndex);
     };
@@ -31,7 +31,7 @@ export default function BottomMenu(): JSX.Element {
     const renderIcon = (icon: string): JSX.Element => {
         return <Icon name={icon} />
     };
-    
+
     return (
         <BottomNavigation
             selectedIndex={tabIndex}
@@ -45,7 +45,7 @@ export default function BottomMenu(): JSX.Element {
                         icon={(): JSX.Element => renderIcon(tab.icon)}
                     />
                 })
-           }
+            }
         </BottomNavigation>
     );
 }

@@ -7,7 +7,8 @@ import {
 } from 'react-native-ui-kitten';
 import {
     ObjectCard,
-    ObjectTabBar
+    ObjectTabBar,
+    BottomMenu
 } from 'components';
 import dictionary from 'dictionary';
 import {
@@ -43,8 +44,8 @@ Cras malesuada pellentesque dapibus.Nulla sit amet sodales ligula.Proin venenati
             photos: ["https://static.polskieszlaki.pl/zdjecia/wycieczki/2015-08/2-eg-1439987734.jpg"],
             mainImage: "https://static.polskieszlaki.pl/zdjecia/wycieczki/2015-08/2-eg-1439987734.jpg",
             coords: {
-                lat: 23.1629502,
-                long: 53.1306049
+                lat: 53.1306049,
+                long: 23.1629502
             }
         }];
         
@@ -66,6 +67,7 @@ Cras malesuada pellentesque dapibus.Nulla sit amet sodales ligula.Proin venenati
                     nearbyObjects.length === 0 && <Text>Brak obiektów w pobliżu :(</Text>
                 }
             </Layout>
+            <BottomMenu />
         </React.Fragment>
     );
 }

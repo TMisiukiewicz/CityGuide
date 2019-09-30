@@ -34,7 +34,7 @@ function ObjectCard(props: ObjectCardProps): JSX.Element {
             </View>
             <View style={style.card}>
                 <Text category="p1" style={style.description}>{description}</Text>
-                <ObjectBar distance={5} />
+                <ObjectBar objectCoords={object.coords} />
             </View>
         </TouchableOpacity>
     )

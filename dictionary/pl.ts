@@ -7,6 +7,9 @@ const pl = {
     distanceAway: (distance: number): string => `${distance} km stąd`,
     map: (): string => 'Mapa',
     favorite: (): string => 'Ulubione',
+    information: (): string => 'Informacje',
+    seeOnMap: (): string => 'Zobacz na mapie',
+    
 }
 
 export default pl;

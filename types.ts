@@ -53,7 +53,13 @@ export interface SingleObjectProps {
 }
 
 export interface DistanceToProps {
-    distance: number;
+    objectCoords: GeolocationCoords;
+    userLocation?: GeolocationCoords;
+    dispatchers?: any;
+}
+
+export interface DistanceToMapToProps {
+    userLocation: GeolocationCoords;
 }
 
 export interface GeneralReducerState {
@@ -65,5 +71,5 @@ export interface HeadingProps {
 }
 
 export interface ObjectBarProps {
-    distance: number;
+    objectCoords: number;
 }

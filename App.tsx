@@ -10,7 +10,6 @@ import {
 } from 'react-native-ui-kitten';
 import { Provider } from 'react-redux';
 import AppContainer from './routes';
-import { BottomMenu } from 'components';
 import { store } from 'store';
 
 export default function App(): JSX.Element {
@@ -21,7 +20,6 @@ export default function App(): JSX.Element {
                 theme={lightTheme}>
                 <IconRegistry icons={EvaIconsPack} />
                 <AppContainer />
-                <BottomMenu />
             </ApplicationProvider>
         </Provider>
     );

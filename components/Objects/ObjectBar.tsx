@@ -4,14 +4,14 @@ import {
     StyleSheet
 } from 'react-native';
 import { DistanceTo, FavoriteIcon } from 'components';
-import { ObjectBarProps } from 'types';
+import {  DistanceToProps } from 'types';
 
-export default function ObjectBar(props: ObjectBarProps): JSX.Element {
-    const { distance } = props;
+export default function ObjectBar(props: DistanceToProps): JSX.Element {
+    const { objectCoords } = props;
     return (
         <View style={style.container}>
             <View style={style.singleColumn}>
-                <DistanceTo distance={distance} />
+                <DistanceTo objectCoords={objectCoords} />
             </View>
             <View style={style.singleColumn}>
                 <FavoriteIcon/>

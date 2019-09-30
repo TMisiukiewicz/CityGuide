@@ -1,41 +1,73 @@
 import React from 'react';
 import {
     View,
-    ActivityIndicator,
     ScrollView,
-    StyleSheet
+    StyleSheet,
+    Dimensions
 } from 'react-native';
 import {
-    Image,
     Text,
 } from 'react-native-elements';
-import { DistanceTo } from 'components';
+import ParallaxScrollView from 'react-native-parallax-scrollview';
+import { withNavigation } from 'react-navigation';
+import {
+    DistanceTo,
+    ObjectBottomBar
+} from 'components';
 import { SingleObjectProps } from 'types';
+import { styles } from '../../styles';
 
-export default function SingleObject(props: SingleObjectProps): JSX.Element {
+function SingleObject(props: SingleObjectProps): JSX.Element {
     const { navigation } = props;
+
+    const returnToPrevious = () => {
+        navigation.goBack();
+    };
+
     return (
-        <View>
-            <Image
-                source={{ uri: navigation.getParam('mainImage') }}
-                style={{ width: '100%', height: 150 }}
-                PlaceholderContent={<ActivityIndicator/>}
-            />
-            <View style={style.container}>
-                <Text h4>{navigation.getParam('name')}</Text>
-                <DistanceTo distance={5} />
-                <ScrollView>
-                    <Text>{navigation.getParam('description')}</Text>
-                </ScrollView>
-            </View>
-        </View>
+        <React.Fragment>
+            <ParallaxScrollView
+                windowHeight={Dimensions.get('window').height * 0.4}
+                backgroundSource={{uri: navigation.getParam('mainImage')}}
+                navBarTitle={navigation.getParam('name')}
+                navBarTitleColor='black'
+                navBarColor='white'
+                userName=' '
+                userImage=' '
+                userTitle=' '
+                leftIcon={{ name: 'arrow-back', color: 'black', size: 24, type: 'material' }}
+                leftIconOnPress={returnToPrevious}
+            >
+                <View style={style.background}>
+                    <View style={style.container}>
+                        <Text h4>{navigation.getParam('name')}</Text>
+                        <DistanceTo objectCoords={navigation.getParam('coords')} />
+                        <ScrollView style={style.description}>
+                            <Text style={style.descriptionText}>{navigation.getParam('description')}</Text>
+                        </ScrollView>
+                    </View>
+                </View>
+            </ParallaxScrollView>
+            <ObjectBottomBar />
+        </React.Fragment>
     )
 }
 
 const style = StyleSheet.create({
     container: {
-        marginTop: 15,
-        marginLeft: 15,
-        marginRight: 15,
+        margin: 15
+    },
+    description: {
+        padding: 15,
+        backgroundColor: 'white',
+        borderRadius: 15
+    },
+    descriptionText: {
+        textAlign: 'justify'
+    },
+    background: {
+        backgroundColor: styles.container.backgroundColor
     }
 })
+
+export default withNavigation(SingleObject);

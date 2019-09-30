@@ -5210,6 +5210,10 @@ react-native-material-bottom-navigation@^1.0.4:
   dependencies:
     prop-types "^15.6.1"
 
+react-native-parallax-scrollview@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-parallax-scrollview/-/react-native-parallax-scrollview-3.0.0.tgz#43ad2aeb45b8e4eca3076ce550419871b131bb20"
+
 react-native-ratings@^6.3.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/react-native-ratings/-/react-native-ratings-6.4.0.tgz#1923e445dbb4092eb880937ac4f7498b06815c3c"
