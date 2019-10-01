@@ -11,6 +11,11 @@ const nearby = (state = initialState, action: DefaultReducerAction): object => {
                 ...state,
                 objects: action.objects
             }
+        case 'SET_ALL_OBJECTS':
+            return {
+                ...state,
+                allObjects: action.allObjects
+            }
         default:
             return state;
     }

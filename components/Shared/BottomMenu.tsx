@@ -4,10 +4,13 @@ import {
     BottomNavigationTab,
     Icon
 } from 'react-native-ui-kitten';
+import { withNavigation } from 'react-navigation';
 import dictionary from 'dictionary';
+import { BottomMenuProps } from 'types';
 
-export default function BottomMenu(): JSX.Element {
+function BottomMenu(props: BottomMenuProps): JSX.Element {
     const [tabIndex, setTabIndex] = useState(0);
+    const { navigation } = props;
 
     const tabs = [
         {
@@ -26,6 +29,7 @@ export default function BottomMenu(): JSX.Element {
     
     const onTabSelect = (newTabIndex: number): void => {
         setTabIndex(newTabIndex);
+        navigation.navigate('Map');
     };
 
     const renderIcon = (icon: string): JSX.Element => {
@@ -49,3 +53,5 @@ export default function BottomMenu(): JSX.Element {
         </BottomNavigation>
     );
 }
+
+export default withNavigation(BottomMenu);

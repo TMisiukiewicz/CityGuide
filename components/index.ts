@@ -1,6 +1,8 @@
 import Heading from './Shared/Heading';
 import BottomMenu from './Shared/BottomMenu';
 import BottomMenuContainer from './Shared/BottomMenuContainer';
+import HeadingText from './Shared/HeadingText';
+import DefaultCarousel from './Shared/DefaultCarousel';
 
 import Slider from './Intro/Slider';
 
@@ -14,6 +16,8 @@ import ObjectTabBar from './Objects/ObjectTabBar';
 import FavoriteIcon from './Objects/FavoriteIcon';
 import ObjectBottomBar from './Objects/ObjectBottomBar';
 
+import Map from './Map/Map';
+
 export {
     Heading,
     Slider,
@@ -26,5 +30,9 @@ export {
     ObjectTabBar,
     FavoriteIcon,
     BottomMenuContainer,
-    ObjectBottomBar
+    ObjectBottomBar,
+    Map,
+    HeadingText,
+    DefaultCarousel
+
 };

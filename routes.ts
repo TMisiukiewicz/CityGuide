@@ -3,12 +3,14 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import {
     Nearby,
-    SingleObject
+    SingleObject,
+    Map
 } from 'components';
 
 const AppNavigator = createStackNavigator({
     Nearby,
-    SingleObject
+    SingleObject,
+    Map
 },
 {
     initialRouteName: 'Nearby',

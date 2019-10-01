@@ -9,7 +9,7 @@ const pl = {
     favorite: (): string => 'Ulubione',
     information: (): string => 'Informacje',
     seeOnMap: (): string => 'Zobacz na mapie',
-    
+    nearbyYou: (): string => 'W pobliżu Ciebie'
 }
 
 export default pl;

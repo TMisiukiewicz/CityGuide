@@ -73,3 +73,16 @@ export interface HeadingProps {
 export interface ObjectBarProps {
     objectCoords: number;
 }
+
+export interface BottomMenuProps {
+    navigation?: any;
+}
+
+export interface HeadingTextProps {
+    content: string;
+}
+
+export interface DefaultCarouselProps {
+    items: SingleObject[];
+    title: string;
+}
