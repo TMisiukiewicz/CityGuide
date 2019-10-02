@@ -107,6 +107,7 @@ Cras malesuada pellentesque dapibus.Nulla sit amet sodales ligula.Proin venenati
                 {
                     nearbyObjects.length === 0 && <Text>Brak obiektów w pobliżu :(</Text>
                 }
+                <DefaultCarousel title={dictionary.others()} items={nearbyObjects} />
             </Layout>
             <BottomMenu />
         </React.Fragment>

@@ -15,7 +15,7 @@ export default function DefaultCarousel(props: DefaultCarouselProps): JSX.Elemen
 
     return (
         <>
-            <Text category="p2" style={style.title}>{title}</Text>
+            <Text category="h6" style={style.title}>{title}</Text>
             <Carousel
                 layout={'default'}
                 data={items}
@@ -29,6 +29,7 @@ export default function DefaultCarousel(props: DefaultCarouselProps): JSX.Elemen
 
 const style = StyleSheet.create({
     title: {
-        padding: 15
+        padding: 15,
+        fontFamily: 'Montserrat-SemiBold'
     }
 })
