@@ -79,10 +79,19 @@ export interface BottomMenuProps {
 }
 
 export interface HeadingTextProps {
-    content: string;
+    firstLine: string;
+    secondLine: string;
 }
 
 export interface DefaultCarouselProps {
     items: SingleObject[];
     title: string;
+}
+
+export interface ObjectListProps {
+    list: SingleObject[];
+}
+
+export interface ObjectTypeProps {
+    typeName: string;
 }

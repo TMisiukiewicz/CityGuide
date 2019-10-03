@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Text } from 'react-native-ui-kitten';
 import {
-    Layout,
-    Text
-} from 'react-native-ui-kitten';
+    ScrollView,
+    StyleSheet,
+    View
+} from 'react-native';
 import {
     DefaultCarousel,
     BottomMenu,
-    HeadingText
+    HeadingText,
+    ObjectsList,
+    SearchBar
 } from 'components';
 import dictionary from 'dictionary';
 import {
@@ -49,7 +53,7 @@ Cras malesuada pellentesque dapibus.Nulla sit amet sodales ligula.Proin venenati
             }
         },
             {
-            id: 1,
+            id: 2,
             name: 'Pałac Branickich',
             distance: 100,
             description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper nisl quis massa tincidunt porttitor. Vivamus lacus felis, sagittis a gravida eu, lobortis sit amet nulla. Integer mollis lobortis suscipit. Nullam id nibh scelerisque, tincidunt enim et, commodo quam. Mauris fringilla sapien eget lectus fermentum, ac pharetra metus fermentum. Nunc ut tempor dolor, et volutpat nisi. Proin porttitor molestie ipsum nec suscipit. Vestibulum placerat ornare lacus, ut imperdiet leo finibus semper. Vestibulum non cursus dolor. Proin diam quam, auctor nec dui id, aliquet bibendum dolor. Suspendisse lacinia feugiat lacus sit amet pretium. Sed lacinia quis neque et consectetur. Nunc sollicitudin nulla dolor, ut consectetur erat placerat blandit. Integer scelerisque sit amet est nec porta. Vivamus consectetur ullamcorper mi, nec mattis augue commodo rutrum.
@@ -69,7 +73,7 @@ Cras malesuada pellentesque dapibus.Nulla sit amet sodales ligula.Proin venenati
             }
         },
             {
-            id: 1,
+            id: 3,
             name: 'Pałac Branickich',
             distance: 100,
             description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper nisl quis massa tincidunt porttitor. Vivamus lacus felis, sagittis a gravida eu, lobortis sit amet nulla. Integer mollis lobortis suscipit. Nullam id nibh scelerisque, tincidunt enim et, commodo quam. Mauris fringilla sapien eget lectus fermentum, ac pharetra metus fermentum. Nunc ut tempor dolor, et volutpat nisi. Proin porttitor molestie ipsum nec suscipit. Vestibulum placerat ornare lacus, ut imperdiet leo finibus semper. Vestibulum non cursus dolor. Proin diam quam, auctor nec dui id, aliquet bibendum dolor. Suspendisse lacinia feugiat lacus sit amet pretium. Sed lacinia quis neque et consectetur. Nunc sollicitudin nulla dolor, ut consectetur erat placerat blandit. Integer scelerisque sit amet est nec porta. Vivamus consectetur ullamcorper mi, nec mattis augue commodo rutrum.
@@ -97,22 +101,35 @@ Cras malesuada pellentesque dapibus.Nulla sit amet sodales ligula.Proin venenati
 
     return (
         <React.Fragment>
-            <HeadingText content="Witaj w Białymstoku!"/>
-            <Layout style={styles.container}>
-                {userDeniedLocation && <Text>{dictionary.geolocationDenied()}</Text>}
-                {
-                    nearbyObjects.length > 0 &&
-                    <DefaultCarousel title={dictionary.nearbyYou()} items={nearbyObjects} />
-                }
-                {
-                    nearbyObjects.length === 0 && <Text>Brak obiektów w pobliżu :(</Text>
-                }
-                <DefaultCarousel title={dictionary.others()} items={nearbyObjects} />
-            </Layout>
+            <ScrollView>
+                <HeadingText
+                    firstLine="Witaj"
+                    secondLine="w Białymstoku!"
+                />
+                <SearchBar />
+                <View style={styles.container}>
+                    {userDeniedLocation && <Text>{dictionary.geolocationDenied()}</Text>}
+                    {
+                        nearbyObjects.length > 0 &&
+                        <DefaultCarousel title={dictionary.nearbyYou()} items={nearbyObjects} />
+                    }
+                    {
+                        nearbyObjects.length === 0 && <Text>Brak obiektów w pobliżu :(</Text>
+                    }
+                    <Text category="h6" style={style.title}>{dictionary.others()}</Text>
+                    <ObjectsList list={nearbyObjects} />
+                </View>
+            </ScrollView>
             <BottomMenu />
         </React.Fragment>
     );
 }
+const style = StyleSheet.create({
+    title: {
+        padding: 15,
+        fontFamily: 'Montserrat-SemiBold'
+    }
+});
 
 const mapStateToProps = (state: StoreInterface): NearbyProps => {
     const { user, nearby } = state;

@@ -1,7 +1,6 @@
 import React from 'react';
 import {
-    TouchableOpacity,
-    ImageBackground,
+    TouchableWithoutFeedback,
     StyleSheet,
     View,
     Image
@@ -16,7 +15,7 @@ function ObjectCard(props: ObjectCardProps): JSX.Element {
     const { object, navigation } = props;
     const description = object.description.length > 60 ? `${object.description.substr(0, 60)}...` : object.description;
     return (
-        <TouchableOpacity onPress={(): void => navigation.navigate('SingleObject', object)}>
+        <TouchableWithoutFeedback onPress={(): void => navigation.navigate('SingleObject', object)}>
             <View style={style.container}>
                 <Image style={style.imgBg} source={{ uri: object.mainImage }}/>
                 <View style={style.card}>
@@ -31,38 +30,37 @@ function ObjectCard(props: ObjectCardProps): JSX.Element {
                     <ObjectBar objectCoords={object.coords} />
                 </View>
             </View>
-        </TouchableOpacity>
+        </TouchableWithoutFeedback>
     )
 }
 
 const style = StyleSheet.create({
     container: {
         borderWidth: 1,
-        borderColor: '#c9d6df'
+        borderColor: '#f0f0f0',
+        marginBottom: 15,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+
+        elevation: 6
     },
     imgBg: {
         width: '100%',
         height: 150,
     },
-    imageStyle: {
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10
-    },
     imageText: {
         color: 'black',
         fontFamily: 'Montserrat-SemiBold',
     },
-    imageContainer: {
-        backgroundColor: 'rgba(0,0,0,0.5)',
-        flex: 1,
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10
-    },
     card: {
         backgroundColor: 'white',
-        padding: 15,
-        borderBottomLeftRadius: 10,
-        borderBottomRightRadius: 10,
+        paddingHorizontal: 10,
+        paddingVertical: 5
     },
     description: {
         color: '#52616b',

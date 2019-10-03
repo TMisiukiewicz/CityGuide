@@ -3,7 +3,10 @@ import {
     View,
     StyleSheet
 } from 'react-native';
-import { DistanceTo, FavoriteIcon } from 'components';
+import {
+    DistanceTo,
+    ObjectType,
+} from 'components';
 import {  DistanceToProps } from 'types';
 
 export default function ObjectBar(props: DistanceToProps): JSX.Element {
@@ -11,10 +14,10 @@ export default function ObjectBar(props: DistanceToProps): JSX.Element {
     return (
         <View style={style.container}>
             <View style={style.singleColumn}>
-                <DistanceTo objectCoords={objectCoords} />
+                <ObjectType typeName="Zabytek" />
             </View>
             <View style={style.singleColumn}>
-                <FavoriteIcon/>
+                <DistanceTo objectCoords={objectCoords} />
             </View>
         </View>
     )

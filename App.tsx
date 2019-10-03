@@ -11,13 +11,14 @@ import {
 import { Provider } from 'react-redux';
 import AppContainer from './routes';
 import { store } from 'store';
+import { theme } from './theme';
 
 export default function App(): JSX.Element {
     return (
         <Provider store={store}>
             <ApplicationProvider
                 mapping={mapping}
-                theme={lightTheme}>
+                theme={theme}>
                 <IconRegistry icons={EvaIconsPack} />
                 <AppContainer />
             </ApplicationProvider>

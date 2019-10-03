@@ -15,8 +15,12 @@ import ObjectBar from './Objects/ObjectBar';
 import ObjectTabBar from './Objects/ObjectTabBar';
 import FavoriteIcon from './Objects/FavoriteIcon';
 import ObjectBottomBar from './Objects/ObjectBottomBar';
+import ObjectsList from './Objects/ObjectsList';
+import ObjectType from './Objects/ObjectType';
 
 import Map from './Map/Map';
+
+import SearchBar from './Search/SearchBar';
 
 export {
     Heading,
@@ -33,6 +37,9 @@ export {
     ObjectBottomBar,
     Map,
     HeadingText,
-    DefaultCarousel
+    DefaultCarousel,
+    ObjectsList,
+    ObjectType,
+    SearchBar
 
 };
