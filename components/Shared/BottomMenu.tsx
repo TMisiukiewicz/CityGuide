@@ -15,15 +15,18 @@ function BottomMenu(props: BottomMenuProps): JSX.Element {
     const tabs = [
         {
             title: dictionary.explore(),
-            icon: 'globe-outline'
+            icon: 'globe-outline',
+            screen: 'Nearby'
         },
         {
             title: dictionary.map(),
-            icon: 'pin-outline'
+            icon: 'pin-outline',
+            screen: 'Map'
         },
         {
             title: dictionary.favorite(),
-            icon: 'heart-outline'
+            icon: 'heart-outline',
+            screen: ''
         },
     ]
     

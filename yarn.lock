@@ -5178,6 +5178,10 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
 
+react-lifecycles-compat@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
 react-native-app-intro-slider@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-native-app-intro-slider/-/react-native-app-intro-slider-3.0.0.tgz#c3620b967503ce410b3d767252392bb6fb2edf97"
@@ -5239,7 +5243,7 @@ react-native-reanimated@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.2.0.tgz#9219227a52a5dfa4d34c324596d6726ccd874293"
 
-react-native-safe-area-view@^0.14.1, react-native-safe-area-view@^0.14.8:
+react-native-safe-area-view@^0.14.1, react-native-safe-area-view@^0.14.6, react-native-safe-area-view@^0.14.8:
   version "0.14.8"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.8.tgz#ef33c46ff8164ae77acad48c3039ec9c34873e5b"
   dependencies:
@@ -5265,6 +5269,10 @@ react-native-status-bar-height@^2.2.0:
 react-native-svg@^9.9.4:
   version "9.9.4"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-9.9.4.tgz#31070eeb68fb6e8dc0c0828c87687da3e0679102"
+
+react-native-tab-view@^2.9.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.10.0.tgz#5e249e5650502010013449ffd4e5edc18a95364b"
 
 react-native-ui-kitten@^4.2.0-beta.2:
   version "4.2.0-beta.2"
@@ -5321,6 +5329,15 @@ react-navigation-stack@^1.8.0:
   resolved "https://registry.yarnpkg.com/react-navigation-stack/-/react-navigation-stack-1.8.0.tgz#52cb159371b64d20780a72ce43e9620adec2f2a0"
   dependencies:
     prop-types "^15.7.2"
+
+react-navigation-tabs@^2.5.5:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/react-navigation-tabs/-/react-navigation-tabs-2.5.5.tgz#f651355b140b35ef5753aac434da5e1943abdd26"
+  dependencies:
+    hoist-non-react-statics "^3.3.0"
+    react-lifecycles-compat "^3.0.4"
+    react-native-safe-area-view "^0.14.6"
+    react-native-tab-view "^2.9.0"
 
 react-navigation@^4.0.5:
   version "4.0.5"
