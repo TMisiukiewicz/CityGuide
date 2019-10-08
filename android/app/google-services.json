@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "232140740939",
+    "firebase_url": "https://bialystok-guide.firebaseio.com",
+    "project_id": "bialystok-guide",
+    "storage_bucket": "bialystok-guide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232140740939:android:1e3c232b0b2d33a51570ce",
+        "android_client_info": {
+          "package_name": "com.bialystokguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232140740939-9dab74s21k2gb1nllk6j0mjpuil728r0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNaPnsXHt1yGYG1g2GRIWs7qxF5QdRH8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232140740939-9dab74s21k2gb1nllk6j0mjpuil728r0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
