@@ -6,7 +6,7 @@ import {
 import Geolocation from 'react-native-geolocation-service';
 import { store } from 'store';
 import { setUserLocation, geolocationDenied } from 'store/actions/user';
-import { GeolocationCoords } from 'types';
+import { GeolocationCoords, SingleObject, UserReducerState } from 'types';
 
 export default class GeolocationService {
 
@@ -84,5 +84,15 @@ export default class GeolocationService {
 
     degreesToRadians(degrees: number): number {
         return degrees * Math.PI / 180;
+    }
+
+    countObjectsArrayDistance(objects: SingleObject[]): SingleObject[] {
+        const { user }: any = store.getState();
+        const objectsList = objects.map(object => {
+            const distance = this.calculateDistance(user.location, object.coords);
+            return { ...object, distance };
+        });
+
+        return objectsList;
     }
 }

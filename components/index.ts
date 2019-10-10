@@ -3,6 +3,7 @@ import BottomMenu from './Shared/BottomMenu';
 import BottomMenuContainer from './Shared/BottomMenuContainer';
 import HeadingText from './Shared/HeadingText';
 import DefaultCarousel from './Shared/DefaultCarousel';
+import Loader from './Shared/Loader';
 
 import Slider from './Intro/Slider';
 
@@ -40,6 +41,7 @@ export {
     DefaultCarousel,
     ObjectsList,
     ObjectType,
-    SearchBar
+    SearchBar,
+    Loader
 
 };

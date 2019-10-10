@@ -1,7 +1,7 @@
 export interface SingleObject {
-    id: number;
+    id?: number;
     name: string;
-    distance: number;
+    distance?: number;
     description: string;
     photos?: string[];
     mainImage: string;
@@ -14,6 +14,10 @@ export interface NearbyReducerState {
 
 export interface DefaultReducerAction {
     type: string;
+    [propName: string]: any;
+}
+
+export interface DefaultThunkReducerAction {
     [propName: string]: any;
 }
 
@@ -94,4 +98,8 @@ export interface ObjectListProps {
 
 export interface ObjectTypeProps {
     typeName: string;
+}
+
+export interface LoaderProps {
+    type?: string;
 }
