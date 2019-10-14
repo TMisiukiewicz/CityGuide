@@ -1,7 +1,8 @@
 import { Dispatch } from 'redux';
 import {
     nearbyActions,
-    userActions
+    userActions,
+    generalActions
 } from './actions';
 import {
     SingleObject,
@@ -23,6 +24,9 @@ export const mapDispatchToProps = (dispatch: Dispatch<any>): any => {
             },
             user: {
                 setUserLocation: (location: GeolocationCoords): DefaultReducerAction => dispatch(userActions.setUserLocation(location))
+            },
+            general: {
+                setCurrentHomeScreenTab: (tabName: string): DefaultReducerAction => dispatch(generalActions.setCurrentHomeScreenTab(tabName))
             }
         }
     }

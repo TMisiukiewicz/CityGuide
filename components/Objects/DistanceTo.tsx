@@ -18,11 +18,7 @@ const Geolocation = new GeolocationService();
 function DistanceTo(props: DistanceToProps): JSX.Element {
     const { userLocation, objectCoords } = props;
     const distance = Geolocation.calculateDistance(userLocation, objectCoords);
-    const renderIcon = (style: StyleType): JSX.Element => {
-        return (
-            <Icon name='pin-outline' {...style} />
-        )
-    };
+    const renderIcon = (style: StyleType): JSX.Element => (<Icon name='pin-outline' {...style} />);
 
     return (
         <Button

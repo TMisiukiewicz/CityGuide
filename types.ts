@@ -39,12 +39,13 @@ export interface StoreInterface {
 }
 
 export interface NearbyProps {
-    userLocation: GeolocationCoords;
-    userDeniedLocation: boolean;
-    nearbyObjects: SingleObject[];
-    dispatchers?: any;
+    list: SingleObject[] | undefined;
 }
 
+export interface HomeScreenProps {
+    dispatchers?: any;
+    currentScreen: string;
+}
 export interface ObjectCardProps {
     object: SingleObject;
     dispatchers?: any;
@@ -68,6 +69,7 @@ export interface DistanceToMapToProps {
 
 export interface GeneralReducerState {
     headerTitle: string;
+    currentHomeScreenTab: string;
 }
 
 export interface HeadingProps {
@@ -79,7 +81,8 @@ export interface ObjectBarProps {
 }
 
 export interface BottomMenuProps {
-    navigation?: any;
+    dispatchers?: any;
+    currentScreen?: string;
 }
 
 export interface HeadingTextProps {
@@ -93,7 +96,7 @@ export interface DefaultCarouselProps {
 }
 
 export interface ObjectListProps {
-    list: SingleObject[];
+    list: SingleObject[] | undefined;
 }
 
 export interface ObjectTypeProps {
@@ -102,4 +105,11 @@ export interface ObjectTypeProps {
 
 export interface LoaderProps {
     type?: string;
+}
+
+export interface NearbyScreenProps {
+    userLocation?: GeolocationCoords;
+    userDeniedLocation?: boolean;
+    allObjects?: SingleObject[];
+    dispatchers?: any;
 }

@@ -1,3 +1,7 @@
+import HomeScreen from './Screens/HomeScreen';
+import MapScreen from './Screens/MapScreen';
+import NearbyScreen from './Screens/NearbyScreen';
+
 import Heading from './Shared/Heading';
 import BottomMenu from './Shared/BottomMenu';
 import BottomMenuContainer from './Shared/BottomMenuContainer';
@@ -24,6 +28,9 @@ import Map from './Map/Map';
 import SearchBar from './Search/SearchBar';
 
 export {
+    HomeScreen,
+    MapScreen,
+    NearbyScreen,
     Heading,
     Slider,
     Nearby,

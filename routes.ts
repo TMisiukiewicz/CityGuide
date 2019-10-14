@@ -2,18 +2,18 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import {
-    Nearby,
+    HomeScreen,
+    MapScreen,
     SingleObject,
-    Map
 } from 'components';
 
 const AppNavigator = createStackNavigator({
-    Nearby,
+    HomeScreen,
+    MapScreen,
     SingleObject,
-    Map
 },
 {
-    initialRouteName: 'Nearby',
+    initialRouteName: 'HomeScreen',
     headerMode: 'none',
 }
 );

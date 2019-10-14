@@ -4,13 +4,13 @@ import {
     BottomNavigationTab,
     Icon
 } from 'react-native-ui-kitten';
-import { withNavigation } from 'react-navigation';
+import { connect } from 'react-redux';
+import { mapDispatchToProps } from 'store';
 import dictionary from 'dictionary';
-import { BottomMenuProps } from 'types';
+import { BottomMenuProps, StoreInterface } from 'types';
 
-function BottomMenu(props: BottomMenuProps): JSX.Element {
+function BottomMenu({dispatchers}: BottomMenuProps): JSX.Element {
     const [tabIndex, setTabIndex] = useState(0);
-    const { navigation } = props;
 
     const tabs = [
         {
@@ -32,7 +32,7 @@ function BottomMenu(props: BottomMenuProps): JSX.Element {
     
     const onTabSelect = (newTabIndex: number): void => {
         setTabIndex(newTabIndex);
-        navigation.navigate('Map');
+        dispatchers.general.setCurrentHomeScreenTab(tabs[newTabIndex].screen);
     };
 
     const renderIcon = (icon: string): JSX.Element => {
@@ -52,9 +52,17 @@ function BottomMenu(props: BottomMenuProps): JSX.Element {
                         icon={(): JSX.Element => renderIcon(tab.icon)}
                     />
                 })
-           }
+            }
         </BottomNavigation>
     );
 }
 
-export default withNavigation(BottomMenu);
+const mapStateToProps = (state: StoreInterface): BottomMenuProps => {
+    const { general } = state;
+
+    return {
+        currentScreen: general.currentHomeScreenTab
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BottomMenu);

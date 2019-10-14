@@ -3,6 +3,7 @@ import dictionary from "dictionary";
 
 const initialState: GeneralReducerState = {
     headerTitle: dictionary.nearbyArea(),
+    currentHomeScreenTab: 'Nearby'
 }
 
 const general = (state = initialState, action: DefaultReducerAction): object => {
@@ -10,7 +11,12 @@ const general = (state = initialState, action: DefaultReducerAction): object => 
         case 'SET_HEADER_TITLE':
             return {
                 ...state,
-                objects: action.headerTitle
+                headerTitle: action.headerTitle
+            }
+        case 'SET_CURRENT_HOMESCREEN_TAB':
+            return {
+                ...state,
+                currentHomeScreenTab: action.currentHomeScreenTab
             }
         default:
             return state;

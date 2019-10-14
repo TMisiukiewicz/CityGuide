@@ -88,10 +88,13 @@ export default class GeolocationService {
 
     countObjectsArrayDistance(objects: SingleObject[]): SingleObject[] {
         const { user }: any = store.getState();
-        const objectsList = objects.map(object => {
+        
+        let objectsList = [];
+        for (let i = 0; i < objects.length; i++) {
+            const object = objects[i];
             const distance = this.calculateDistance(user.location, object.coords);
-            return { ...object, distance };
-        });
+            objectsList.push({ ...object, distance });
+        }
 
         return objectsList;
     }
