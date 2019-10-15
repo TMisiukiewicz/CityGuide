@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import { useQuery } from '@apollo/react-hooks';
 import { Text } from 'react-native-ui-kitten';
 import { connect } from 'react-redux';
@@ -26,16 +26,20 @@ function NearbyScreen({ dispatchers, allObjects }: NearbyScreenProps): JSX.Eleme
     const getLocation = async () => {
         await Geolocation.getLocation();
     }
-    
-    const { loading, error, data } = useQuery(getAllObjects);
 
-    if (loading) return <Loader type="fullPage" />
-    if (error) return <Text>An error occured</Text>
+    const { loading, error, data } = useQuery(getAllObjects, {
+        skip: allObjects.length > 0
+    });
 
-    dispatchers.nearby.handleAllObjects(data.objects);
+    if (allObjects.length === 0) {
+        if (loading) return <Loader type="fullPage" />
+        if (error) return <Text>An error occured</Text>
+        
+        dispatchers.nearby.handleAllObjects(data.objects);
+    }
 
     return (
-        <View>
+        <ScrollView>
             <HeadingText
                 firstLine="Witaj"
                 secondLine="w Białymstoku!"
@@ -43,7 +47,7 @@ function NearbyScreen({ dispatchers, allObjects }: NearbyScreenProps): JSX.Eleme
             <SearchBar />
             <Nearby list={allObjects} />
             <ObjectsList list={allObjects} />
-        </View>
+        </ScrollView>
     )
 }
 

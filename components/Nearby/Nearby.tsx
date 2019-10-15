@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Text } from 'react-native-ui-kitten';
 import {
     DefaultCarousel,
@@ -16,4 +16,4 @@ export function Nearby({ list }: NearbyProps): JSX.Element {
 
 Nearby.whyDidYouRender = true;
 
-export default Nearby;
+export default memo(Nearby);

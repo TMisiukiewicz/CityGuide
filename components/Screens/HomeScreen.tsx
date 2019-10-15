@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {
-    ScrollView,
-} from 'react-native';
+import { ScrollView } from 'react-native';
 import {
     BottomMenu,
     MapScreen,
@@ -19,12 +17,10 @@ export function HomeScreen({ currentScreen }: HomeScreenProps): JSX.Element {
 
     return (
         <React.Fragment>
-            <ScrollView>
-                {currentScreen === 'Nearby' && (
-                    <NearbyScreen />
-                )}
-                {currentScreen === 'Map' && <MapScreen />}
-            </ScrollView>
+            {currentScreen === 'Nearby' && (
+                <NearbyScreen />
+            )}
+            {currentScreen === 'Map' && <MapScreen />}
             <BottomMenu />
         </React.Fragment>
     );

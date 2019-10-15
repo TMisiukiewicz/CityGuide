@@ -39,7 +39,7 @@ export interface StoreInterface {
 }
 
 export interface NearbyProps {
-    list: SingleObject[] | undefined;
+    list: SingleObject[];
 }
 
 export interface HomeScreenProps {

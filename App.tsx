@@ -11,6 +11,7 @@ import {
 import { Provider } from 'react-redux';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient, InMemoryCache, HttpLink } from 'apollo-client-preset';
+import MapboxGL from '@react-native-mapbox-gl/maps';
 import AppContainer from './routes';
 import { store } from 'store';
 import { theme } from './theme';
@@ -25,6 +26,8 @@ export default function App(): JSX.Element {
         cache: new InMemoryCache(),
         link: new HttpLink({ uri: config.api.host })
     });
+
+    MapboxGL.setAccessToken(config.map.token);
 
     return (
         <Provider store={store}>
