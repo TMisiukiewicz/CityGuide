@@ -1,19 +1,30 @@
 import React from 'react';
-import { Header } from 'react-native-elements';
+import {
+    Header,
+    Text
+} from 'react-native-elements';
+import { connect } from 'react-redux';
+import { mapDispatchToProps } from 'store';
+import { StoreInterface, HeadingProps } from 'types';
 
-interface Props {
-    title: string;
-}
-
-export default function Heading(props: Props) {
-    const { title } = props;
-
+function Heading(props: HeadingProps): JSX.Element {
+    const { headerTitle } = props;
     return (
         <Header
-            placement="left"
-            leftComponent={{ icon: 'menu', color: '#fff' }}
-            centerComponent={{ text: title, style: { color: '#fff' } }}
-            rightComponent={{ icon: 'home', color: '#fff' }}
+            backgroundColor="#ffffff"
+            leftComponent={{ icon: 'menu', color: '#000' }}
+            centerComponent={<Text h4>{headerTitle}</Text>}
+            rightComponent={{ icon: 'home', color: '#000' }}
+            
         />
     )
 }
+
+const mapStateToProps = (state: StoreInterface): HeadingProps => {
+    const { general } = state;
+    return {
+        headerTitle: general.headerTitle
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Heading);

@@ -1,12 +1,14 @@
 import { Dispatch } from 'redux';
 import {
     nearbyActions,
-    userActions
+    userActions,
+    generalActions
 } from './actions';
 import {
     SingleObject,
     GeolocationCoords,
-    DefaultReducerAction
+    DefaultReducerAction,
+    DefaultThunkReducerAction
 } from 'types';
 
 export const mapStateToProps = (state: any): any => {
@@ -17,10 +19,14 @@ export const mapDispatchToProps = (dispatch: Dispatch<any>): any => {
     return {
         dispatchers: {
             nearby: {
-                setNearbyObjects: (objects: SingleObject[]): DefaultReducerAction => dispatch(nearbyActions.setNearbyObjects(objects))
+                setNearbyObjects: (objects: SingleObject[]): DefaultReducerAction => dispatch(nearbyActions.setNearbyObjects(objects)),
+                handleAllObjects: (objects: SingleObject[]): DefaultThunkReducerAction => dispatch(nearbyActions.handleAllObjects(objects))
             },
             user: {
                 setUserLocation: (location: GeolocationCoords): DefaultReducerAction => dispatch(userActions.setUserLocation(location))
+            },
+            general: {
+                setCurrentHomeScreenTab: (tabName: string): DefaultReducerAction => dispatch(generalActions.setCurrentHomeScreenTab(tabName))
             }
         }
     }

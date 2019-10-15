@@ -1,43 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { memo } from 'react';
+import { Text } from 'react-native-ui-kitten';
 import {
-    View,
-    Text
-} from 'react-native';
-import { connect } from 'react-redux';
-import { Heading } from 'components';
+    DefaultCarousel,
+    Loader
+} from 'components';
 import dictionary from 'dictionary';
-import { StoreInterface, NearbyProps } from 'types';
-import { mapDispatchToProps } from 'store';
-import { GeolocationService } from 'services';
+import { NearbyProps } from 'types';
 
-const Geolocation = new GeolocationService();
+export function Nearby({ list }: NearbyProps): JSX.Element {
+    if (list.length === 0) return <Loader />;
+    else if(list.length > 0) return <DefaultCarousel title={dictionary.nearbyYou()} items={list} />;
 
-function Nearby(props: NearbyProps): JSX.Element {
-    const { userLocation, userDeniedLocation } = props;
-    useEffect(() => {
-        Geolocation.getLocation();
-    }, []);
-
-    useEffect(() => {
-        console.log(userLocation);
-    }, [userLocation]);
-
-    return (
-        <View>
-            <Heading title={dictionary.nearbyArea()} /> 
-            {userDeniedLocation && <Text>{dictionary.geolocationDenied()}</Text>}
-        </View>
-    );
+    return <Text>No items.</Text>
 }
 
-const mapStateToProps = (state: StoreInterface): NearbyProps => {
-    const { user, nearby } = state;
+Nearby.whyDidYouRender = true;
 
-    return {
-        userLocation: user.location,
-        userDeniedLocation: user.locationDenied,
-        nearbyObjects: nearby.objects
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Nearby);
+export default memo(Nearby);
