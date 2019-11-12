@@ -24,6 +24,8 @@ import ObjectsList from './Objects/ObjectsList';
 import ObjectType from './Objects/ObjectType';
 
 import Map from './Map/Map';
+import Annotations from './Map/Annotations';
+import ObjectModal from './Map/ObjectModal';
 
 import SearchBar from './Search/SearchBar';
 
@@ -49,6 +51,7 @@ export {
     ObjectsList,
     ObjectType,
     SearchBar,
-    Loader
-
+    Loader,
+    Annotations,
+    ObjectModal
 };

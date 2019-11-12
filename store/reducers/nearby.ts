@@ -2,6 +2,7 @@ import { NearbyReducerState, DefaultReducerAction } from 'types';
 
 const initialState: NearbyReducerState = {
     objects: [],
+    allObjects: [],
 }
 
 const nearby = (state = initialState, action: DefaultReducerAction): object => {

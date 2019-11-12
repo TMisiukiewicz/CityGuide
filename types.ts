@@ -10,6 +10,7 @@ export interface SingleObject {
 
 export interface NearbyReducerState {
     objects: SingleObject[];
+    allObjects: SingleObject[];
 }
 
 export interface DefaultReducerAction {
@@ -112,4 +113,18 @@ export interface NearbyScreenProps {
     userDeniedLocation?: boolean;
     allObjects?: SingleObject[];
     dispatchers?: any;
+}
+
+export interface AnnotationsProps {
+    objects: SingleObject[];
+    onSelected: any;
+}
+
+export interface MapProps {
+    allObjects?: SingleObject[];
+    dispatchers?: any;
+}
+
+export interface ObjectModalProps {
+    showModal: boolean;
 }
