@@ -1,26 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Layout } from 'react-native-ui-kitten';
 import MapboxGl from '@react-native-mapbox-gl/maps';
 import { StyleSheet, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
-import { Annotations, ObjectModal } from 'components';
+import { Annotations } from 'components';
 import { MapProps, StoreInterface, SingleObject } from 'types';
 import { mapDispatchToProps } from 'store';
+import { withNavigation } from 'react-navigation';
 
-function Map({ allObjects }: MapProps): JSX.Element {
+function Map({ allObjects, navigation }: MapProps): JSX.Element {
     let map = null;
-    const [objectModal, showObjectModal] = useState(false);
-
-    const showModal = (object: SingleObject) => {
-        showObjectModal(true);
-    }
 
     return (
         <Layout style={style.page}>
             <Layout style={style.container}>
-                {objectModal && (
-                    <ObjectModal showModal={objectModal} />
-                )}
                 <MapboxGl.MapView
                     ref={(c) => map = c}
                     style={style.map}
@@ -35,7 +28,7 @@ function Map({ allObjects }: MapProps): JSX.Element {
                         followUserLocation
                         followUserMode="normal"
                     />
-                    <Annotations objects={allObjects} onSelected={(object): void => showModal(object)} />
+                    <Annotations objects={allObjects} onSelected={(object: SingleObject): void => navigation.navigate('SingleObject', object)} />
                     <MapboxGl.UserLocation />
                 </MapboxGl.MapView>
             </Layout>
@@ -68,4 +61,4 @@ const style = StyleSheet.create({
     }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Map);
+export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(Map));

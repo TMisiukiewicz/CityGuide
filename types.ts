@@ -116,13 +116,14 @@ export interface NearbyScreenProps {
 }
 
 export interface AnnotationsProps {
-    objects: SingleObject[];
+    objects: SingleObject[] | undefined;
     onSelected: any;
 }
 
 export interface MapProps {
     allObjects?: SingleObject[];
     dispatchers?: any;
+    navigation?: any;
 }
 
 export interface ObjectModalProps {
